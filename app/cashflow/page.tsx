@@ -1,13 +1,16 @@
-'use client'
+"use client";
 
-export default function CashFlowPage() {
+import { GlassPanel } from "../../components/GlassPanel";
+
+export default function CashflowPage() {
   return (
-    <main className="p-6 space-y-6">
-      <h1 className="text-3xl font-bold">Cash Flow & AR</h1>
-      <div className="bg-neutral-800 p-4 rounded-lg">
-        <h2 className="text-xl font-semibold mb-2">Accounts Receivable</h2>
-        <p className="text-neutral-400">Invoices, factoring status and subsidy projections will be displayed here. Use charts to visualize cash inflow and outflow over time.</p>
-      </div>
-    </main>
-  )
+    <GlassPanel className="p-5">
+      <h1 className="mb-2 text-xl font-semibold text-slate-50">
+        Cash Flow
+      </h1>
+      <p className="text-sm text-slate-300">
+        This is the Cash Flow view. Plug in invoicing cadence, draw schedules and burn-downs here.
+      </p>
+    </GlassPanel>
+  );
 }

@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+}
+
+.glass-panel {
+  @apply rounded-2xl border border-white/10 bg-slate-950/70 shadow-xl backdrop-blur-xl;
+}
+
+/* neon pulse for "live" tags */
+.neon-pulse {
+  animation: pulse-glow 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 16px rgba(56,189,248,0.25); }
+  50%      { box-shadow: 0 0 28px rgba(56,189,248,0.65); }
+}
+
+/* orbiting urgency orb */
+@keyframes orbit {
+  0%   { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+/* sliding gradient ribbon */
+@keyframes slide {
+  0%   { background-position-x: 0%; }
+  100% { background-position-x: 200%; }
+}

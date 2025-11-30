@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { GlassPanel } from "../../../components/GlassPanel";
+import { GlassPanel } from "@/components/GlassPanel";
 import { AlertTriangle } from "lucide-react";
 
 export default function QcAIPage() {

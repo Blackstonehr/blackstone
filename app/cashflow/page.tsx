@@ -1,6 +1,6 @@
 "use client";
 
-import { GlassPanel } from "../../components/GlassPanel";
+import { GlassPanel } from "@/components/GlassPanel";
 
 export default function CashflowPage() {
   return (

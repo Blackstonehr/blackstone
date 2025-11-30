@@ -1,9 +1,9 @@
 import "../styles/globals.css";
 import type { ReactNode } from "react";
-import { Sidebar } from "../components/Sidebar";
-import { Topbar } from "../components/Topbar";
-import { RealtimeSyncIndicator } from "../components/RealtimeSyncIndicator";
-import { VoiceBriefButton } from "../components/VoiceBriefButton";
+import { Sidebar } from "@/components/Sidebar";
+import { Topbar } from "@/components/Topbar";
+import { RealtimeSyncIndicator } from "@/components/RealtimeSyncIndicator";
+import { VoiceBriefButton } from "@/components/VoiceBriefButton";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

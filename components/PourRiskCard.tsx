@@ -1,10 +1,22 @@
-"use client";
-
 import { CloudRain } from "lucide-react";
 
-export function PourRiskCard({ weather }: any) {
-  const risk = weather?.rainChance > 60 || weather?.temp < 5 ? 78 : 32;
-  const tone = risk > 70 ? "red" : risk > 50 ? "yellow" : "green";
+interface PourRiskCardProps {
+  weather: {
+    temp: number;
+    desc: string;
+  };
+  tone: "red" | "yellow" | "green";
+  risk: number;
+}
+
+const toneClass: Record<PourRiskCardProps["tone"], string> = {
+  red: "text-red-400",
+  yellow: "text-yellow-400",
+  green: "text-green-400"
+};
+
+export function PourRiskCard({ weather, tone, risk }: PourRiskCardProps) {
+  const colorClass = toneClass[tone];
 
   return (
     <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/80 px-5 py-4 shadow-xl backdrop-blur-xl">
@@ -12,14 +24,12 @@ export function PourRiskCard({ weather }: any) {
         <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
           Pour Risk Today
         </span>
-        <span className={`block text-2xl font-semibold ${tone === "red" ? "text-red-400" : tone === "yellow" ? "text-yellow-400" : "text-green-400"}`}>
-          {risk}%
-        </span>
+        <span className={`block text-2xl font-semibold ${colorClass}`}>{risk}%</span>
         <span className="text-xs text-slate-300">
-          {weather?.desc || "Clear"} • {weather?.temp ? `${weather.temp}°C` : "--°C"}
+          {weather.desc} • {weather.temp}°C
         </span>
       </div>
-      <CloudRain className={`h-6 w-6 ${tone === "red" ? "text-red-400" : tone === "yellow" ? "text-yellow-400" : "text-green-400"}`} />
+      <CloudRain className={`h-6 w-6 ${colorClass}`} />
     </div>
   );
 }

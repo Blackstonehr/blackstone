@@ -7,6 +7,7 @@ interface PourRiskCardProps {
   };
   tone: "red" | "yellow" | "green";
   risk: number;
+  className?: string;
 }
 
 const toneClass: Record<PourRiskCardProps["tone"], string> = {
@@ -15,11 +16,13 @@ const toneClass: Record<PourRiskCardProps["tone"], string> = {
   green: "text-green-400"
 };
 
-export function PourRiskCard({ weather, tone, risk }: PourRiskCardProps) {
+export function PourRiskCard({ weather, tone, risk, className }: PourRiskCardProps) {
   const colorClass = toneClass[tone];
+  const baseClass =
+    "flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/80 px-5 py-4 shadow-xl backdrop-blur-xl";
 
   return (
-    <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/80 px-5 py-4 shadow-xl backdrop-blur-xl">
+    <div className={[baseClass, className].filter(Boolean).join(" ")}>
       <div className="space-y-1">
         <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
           Pour Risk Today

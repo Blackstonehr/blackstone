@@ -2,9 +2,16 @@
 
 import { AlertTriangle } from "lucide-react";
 
-export function CriticalPathCard() {
+interface CriticalPathCardProps {
+  className?: string;
+}
+
+export function CriticalPathCard({ className }: CriticalPathCardProps) {
+  const baseClass =
+    "flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/80 px-5 py-4 shadow-xl backdrop-blur-xl transition-transform duration-200 hover:-translate-y-1 hover:shadow-neon-orange";
+
   return (
-    <div className="flex items-center justify-between gap-4 rounded-2xl border border-orange-500/40 bg-slate-950/80 px-5 py-4 shadow-xl backdrop-blur-xl transition-transform duration-200 hover:-translate-y-1 hover:shadow-neon-orange">
+    <div className={[baseClass, className].filter(Boolean).join(" ")}>
       <div className="space-y-1">
         <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
           Critical Path Risk

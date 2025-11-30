@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { GlassPanel } from "../components/GlassPanel";
-import { KpiCard } from "../components/KpiCard";
-import { StatusCard } from "../components/StatusCard";
-import { CriticalPathCard } from "../components/CriticalPathCard";
-import { CashBurnCard } from "../components/CashBurnCard";
-import { PourRiskCard } from "../components/PourRiskCard";
+import { GlassPanel } from "@/components/GlassPanel";
+import { KpiCard } from "@/components/KpiCard";
+import { StatusCard } from "@/components/StatusCard";
+import { CriticalPathCard } from "@/components/CriticalPathCard";
+import { CashBurnCard } from "@/components/CashBurnCard";
+import { PourRiskCard } from "@/components/PourRiskCard";
 import { TrendingUp, ShieldCheck, DollarSign, Users, HardHat } from "lucide-react";
 
 const mockData = {

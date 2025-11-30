@@ -1,6 +1,13 @@
-export function CashBurnCard() {
+interface CashBurnCardProps {
+  className?: string;
+}
+
+export function CashBurnCard({ className }: CashBurnCardProps) {
+  const baseClass =
+    "flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/80 px-5 py-4 shadow-xl backdrop-blur-xl";
+
   return (
-    <div className="flex items-center justify-between gap-4 rounded-2xl border border-red-500/50 bg-slate-950/80 px-5 py-4 shadow-xl backdrop-blur-xl">
+    <div className={[baseClass, className].filter(Boolean).join(" ")}>
       <div className="space-y-1">
         <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
           Cash Burn This Week

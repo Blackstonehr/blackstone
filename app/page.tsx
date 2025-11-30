@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { GlassPanel } from "../components/GlassPanel";
-import { KpiCard } from "../components/KpiCard";
-import { StatusCard } from "../components/StatusCard";
-import { CriticalPathCard } from "../components/CriticalPathCard";
-import { CashBurnCard } from "../components/CashBurnCard";
-import { PourRiskCard } from "../components/PourRiskCard";
+import { GlassPanel } from "@/components/GlassPanel";
+import { KpiCard } from "@/components/KpiCard";
+import { StatusCard } from "@/components/StatusCard";
+import { CriticalPathCard } from "@/components/CriticalPathCard";
+import { CashBurnCard } from "@/components/CashBurnCard";
+import { PourRiskCard } from "@/components/PourRiskCard";
 import { TrendingUp, ShieldCheck, DollarSign, Users, HardHat } from "lucide-react";
 
 const mockData = {
@@ -43,9 +43,14 @@ export default function DashboardPage() {
 
       {/* HERO ROW */}
       <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <CriticalPathCard />
-        <CashBurnCard />
-        <PourRiskCard weather={weather} tone={tone} risk={risk} />
+        <CriticalPathCard className="border-red-500/60 bg-red-950/40 ring-2 ring-red-500/40 shadow-lg shadow-red-500/20" />
+        <CashBurnCard className="border-orange-500/60 bg-orange-950/30 ring-2 ring-orange-500/30 shadow-lg shadow-orange-500/20" />
+        <PourRiskCard
+          weather={weather}
+          tone={tone}
+          risk={risk}
+          className="border-yellow-500/50 bg-yellow-950/20 ring-1 ring-yellow-500/30 shadow-md shadow-yellow-500/10"
+        />
         <KpiCard title="Safety near-miss trend" value="↑ 3" icon={HardHat} tone="yellow" />
       </section>
 

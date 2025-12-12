@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "env:report": "tsx scripts/env-report.ts"
   },
   "dependencies": {
     "next": "14.2.15",
@@ -23,7 +24,8 @@
     "tailwindcss": "^3.4.15",
     "postcss": "^8.4.49",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.14.0",
-    "eslint-config-next": "14.2.15"
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.15",
+    "tsx": "^4.19.2"
   }
 }
